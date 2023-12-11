@@ -27,6 +27,7 @@ def calculate_expenses(expense):
 def set_of_expenses(expenses, labels = {}):
     monthly = defaultdict(float)
     for i in expenses:
+
         if i.deleted_at or len(i.repayments) < 1 or i.payment:
             continue
         else:
@@ -49,11 +50,11 @@ def calculate_month_numbers(start_date, end_date):
 
 def main():
     """
-    Main function to process Splitwise expenses for a specified date range.
+        Main function to process Splitwise expenses for a specified date range.
 
-    Command Line Arguments:
-        --from_date: Start date in the format 'YYYY-MM'.
-        --to_date: End date in the format 'YYYY-MM'.
+        Command Line Arguments:
+            --from_date: Start date in the format 'YYYY-MM'.
+            --to_date: End date in the format 'YYYY-MM'.
     """
     parser = argparse.ArgumentParser(description="Process Splitwise expenses for a specified date range.")
 
